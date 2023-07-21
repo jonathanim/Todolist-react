@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
 import "./Form.css"
+import IdCreator from '../helper/IdCreator'
 
 
 
-const Form = () => {
+const Form = (props) => {
   const [todo, setTodo] = useState('')
 
-
   const handleChange = e => {
-    // setTodo(prev=> {
-      
-    // })
+    setTodo(e.target.value)
   }
+  
   const handleSubmit = e => {
     e.preventDefault()
+
+    props.onSubmit({
+      id: IdCreator(),
+      text: todo
+    })
+
+    setTodo('')
   }
 
   return (
