@@ -16,13 +16,11 @@ function App() {
     }else {
       const newTodos = [todo, ...todos]
       setTodos(newTodos)
-      console.log(newTodos)
     }
-
   }
 
   const todoList = todos.map((todo, index)=> {
-    return <TodoTask todo={todo} index={index}/>
+    return <TodoTask todo={todo} key={index}/>
   })
 
   return (

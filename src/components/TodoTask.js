@@ -1,18 +1,14 @@
 import React, {useState} from 'react'
-
+import { ImCross } from 'react-icons/im';
 const TodoTask = (props) => {
 
-  const {todo, index} = props
+  const {todo} = props
   const [isCompleted, setIsCompleted] = useState(false)
 
-
-  console.log(todo)
   return (
-    <div className='todoTask-container'>
         <div className={isCompleted ? "todo-completed": "todo-task"}>
-
+         <div>{todo.text}</div> <div className='todotask-edit'><ImCross/></div>
         </div>
-    </div>
   )
 }
 
