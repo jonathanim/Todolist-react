@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import Title from './components/Title';
+import TodoTask from './components/TodoTask';
 
 function App() {
 
@@ -20,11 +21,15 @@ function App() {
 
   }
 
+  const todoList = todos.map((todo, index)=> {
+    return <TodoTask todo={todo} index={index}/>
+  })
 
   return (
     <div className="App-container">
       <Title title={"Todo List"}/>
       <Form onSubmit={addTodos}/>
+      {todoList}
     </div>
   );
 }
