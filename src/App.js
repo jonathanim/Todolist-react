@@ -7,7 +7,7 @@ import TodoTask from './components/TodoTask';
 
 function App() {
 
-  const [todos, setTodos] =useState([])
+  const [todos, setTodos] = useState([])
 
   const addTodos = todo => {
     if(!todo.text || todo.text.length < 3){
@@ -20,7 +20,7 @@ function App() {
   }
 
   const todoList = todos.map((todo, index)=> {
-    return <TodoTask todo={todo} key={index}/>
+    return <TodoTask todo={todo} key={index} todos={todos} setTodos={setTodos}/>
   })
 
   return (
